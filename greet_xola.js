@@ -1,10 +1,16 @@
+const chalk = require('chalk');
+//import the greet module that is in the current folder
+const greet = require('./greet');
+
+
+
 var figlet = require('figlet');
  
-figlet('Xola!!', function(err, data) {
+figlet(greet('Xola'), function(err, data) {
     if (err) {
         console.log('Something went wrong...');
         console.dir(err);
         return;
     }
-    console.log(data)
+    console.log(chalk.bgGreen.black(data))
 });
